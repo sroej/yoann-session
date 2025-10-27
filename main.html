@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YOANN-XMD SESSION</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* Style général */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url("https://files.catbox.moe/mwmtbh.jpg");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; /* prend tout l'écran */
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+
+    /* Animation d'entrée des boutons */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Bouton stylisé */
+    .btn {
+      --color: #ffffff;
+      --color-hover: #00ffff;
+      width: 210px;
+      padding: 0.75em 1em;
+      background-color: #000000d0; /* noir légèrement transparent */
+      border-radius: 10px;
+      border: 1.5px solid var(--color);
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 1;
+      font-weight: 600;
+      font-size: 16px;
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      text-transform: uppercase;
+      color: var(--color);
+      margin: 12px 0;
+      letter-spacing: 1px;
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    /* Effet de brillance au survol */
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    /* Effet lumineux + zoom au survol */
+    .btn:hover {
+      color: var(--color-hover);
+      box-shadow: 0 0 20px var(--color-hover), 0 0 40px var(--color-hover);
+      transform: scale(1.05);
+      border-color: var(--color-hover);
+    }
+
+    /* Réaction au clic */
+    .btn:active {
+      transform: scale(0.95);
+      filter: brightness(0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="window.open('/pair')" class="btn">PAIR CODE</button>
+  <button onclick="window.open('/qr')" class="btn">QR CODE</button>
+  <button onclick="window.open('https://github.com/denki-arch/YOANN-XMD/fork')" class="btn">REPO FORK</button>
+
+</body>
+  </html>
